@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>nothing is there</h1>
+    <div id="container">
+
+    </div>
+</body>
+</html>
+<!-- console.log(" Object of Abstract Class cannot be created"); -->
+<!-- console.log("Abstract Method has no implementation"); -->
+
+<script>
+    let videoArr = JSON.parse(localStorage.getItem("video"));
+    console.log(videoArr);
+    let getting_url = `https://www.youtube.com/embed/${videoArr.videoId}`;
+
+    let playVideo = () =>{
+        let container = document.getElementById('container');
+
+        let iframe = document.createElement('iframe');
+        iframe.src = getting_url;
+
+        let h2 = document.createElement('h3');
+        h2.innerText = videoArr.title;
+
+        container.append(iframe,h2);
+    }
+    playVideo();
+
+    // const api_key = "AIzaSyBjTl9DMnlpqgAaM1qQnVk_B6_RKiHumog";
+
+</script>

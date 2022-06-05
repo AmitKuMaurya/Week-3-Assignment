@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We session</title>
+</head>
+<body>
+    <h1>OOPS</h1>
+</body>
+</html>
+
+<script>
+
+
+// here are some ways to create objects
+
+//1. let obj = {} //object literal
+//2. Object.create()
+//3. constructor function
+//4. Classes
+
+    // craeting an login signup system 
+    // user 
+    // maaykeWale
+    // sasuralWale
+
+
+
+//functinalities
+//1. user can signup - validateUsername, validatePassword
+//2. user can login
+
+//1. encapsulation - making private variables or methods that are used only inside class
+
+
+    class user{
+        #userPassword;
+        constructor(name,gender){
+            this.name = name;
+            this.gender = gender;
+        }
+
+        validateUsername(userName){
+            // we can give if / else condition here to change input of username
+
+            return true;
+        }
+        #validateUserpassword(userPassword){
+            //we can give if / else condition here to change input of username
+
+            return true;
+        }
+        signUp(userName,userPassword){
+            let isValidated = false;
+
+            isValidated = this.validateUsername(userName) && this.#validateUserpassword(userPassword);
+            if(isValidated==true){
+                this.userName = userName;
+                this.#userPassword = userPassword;
+
+                console.log("user is signed-up successfully")
+            } else{
+                console.log("user credential failed");
+            }
+        }
+
+        login(userName,userPassword){
+            if(this.userName===userName && this.#userPassword === userPassword){
+                alert('god');
+                console.log("logged in successfully");
+            } else{
+                alert("Kat gya aapka");
+                console.log("wrong cretentials")
+            }
+        }
+
+        // Traditional way of changind password 
+
+        // passwordChanger(userPassword){
+        //     this.userPassword = newPassword;
+        // }
+
+        // usernameChanger(userName){
+        //     this.userName = newUsername;
+        // }
+
+        // Mordern way of changing username and password 
+        // we use set or get for this 
+
+        set userPassword(newPassword){
+            this.#userPassword = newPassword;
+        }
+
+        set username(newUsername){
+            this.username = newUsername;
+        }
+    }
+
+
+
+
+    class maaykeWale extends user{
+        constructor(name,age){
+            super(name,age);
+        }
+    }
+
+    class sasuralWale extends user{
+        constructor(name,age){
+            super(name,age);
+        }
+    }
+
+    let details = new user("bhau",69);
+
+    // details.signUp("Professor","e721988mdk");
+
+    // details.login("Professor","e721988mdk");
+
+    
+    console.log(details);
+    // console.log(validateUsername);
+    // details.#alidateUsername();
+
+    let details2 = new maaykeWale("kalua",18);
+
+    // details2.signUp("popatKalua","kalua123");
+
+    // details2.login("popatKalua","kalua123");
+
+    console.log(details2);
+
+    let details3 = new sasuralWale(details.name,10);
+// console.log(details.name)
+    details3.signUp("bhaluhumai","bhalu123");
+
+    // details3.#validateUserpassword();
+    
+    // details3.login("bhaluhumai","bhalu123");
+    // sasuralWale.userPassword();
+
+    console.log(details3);
+
+
+
+    // if we want to change value of user or password 
+
+    details.userPassword = 'babu bhaiya ye bhot beksr aadmi hai';
+    details2.userPassword = '21 din mai paisa double';
+    details3.userPassword = 'ae tu ja re';
+
+    details.userName = 'ghan shyaam';
+    details2.userName = 'mighty raju';
+    details3.userName = 'babu bhaiya';
+
+
+</script>

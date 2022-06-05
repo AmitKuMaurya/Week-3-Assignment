@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Array in JS</title>
+</head>
+<body>
+    <h1>Custom Array in JS</h1>
+</body>
+</html>
+
+<script>
+    // class Array{
+    
+
+
+    class Array{
+        constructor(){
+            this.length =0;
+            this.arr = [];
+        }
+        push(ele){
+            this.arr[this.length] = ele;
+            this.length++;
+        }
+        pop(ele){
+            this.arr.pop();
+            this.length--;
+        }
+        top(ele){
+            return this.arr[this.length-1];
+        }
+        print(){
+           return console.log(this.arr);
+        }
+        printReverse(){
+            let arr2 = [];
+            for(let i=this.length-1;i>=0;i--){
+                arr2.push(this.arr[i]);
+            }
+            return console.log(arr2);
+        }
+        size(arr){
+            return this.arr.length;
+        }
+    }
+
+    let Arr = new Array();
+    Arr.push(9);
+    Arr.push(5);
+    Arr.push(7);
+    Arr.push(4);
+    Arr.push(1);
+    console.log(Arr);
+
+    Arr.pop();
+    console.log(Arr);
+
+    console.log("top value",Arr.top());
+    // console.log(Arr);
+    
+    
+    Arr.print();
+    Arr.printReverse();
+    // console.log(Arr);
+    
+    console.log("size",Arr.size());
+</script>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oops</title>
+  </head>
+  <body>
+    <h1>Es6 OOP's</h1>
+  </body>
+</html>
+
+<script>
+  // oops
+  // we treat oops as a first Citizen
+
+  // 1. Inheritance
+
+//       class Car {
+//     constructor(n, b) {
+//       this.name = n;
+//       this.brand = b;
+//     }
+
+//     showDetails() {
+//       console.log(`${this.name} ${this.brand}`);
+//     }
+//   }
+
+//   class SUV extends Car {
+//     constructor(x, y) {
+//       super(x, y);
+
+//       this.buyer = 'Amit';
+//     }
+//   }
+
+//   class miniSUV extends Car{
+//     constructor(x, y) {
+//       super(x, y);
+//       this.type = 'mini-suv';
+//     }
+//   }
+
+//   var car = new Car('Phantom', 'RR');
+
+//   console.log(car);
+
+//   var car1 = new SUV('Harrior', 'tata');
+
+//   console.log(car1);
+
+//   var car2 = new miniSUV('duster', 'renault');
+
+//   console.log(car2);
+
+  //     // 2.encapsulation
+
+    //  class ClassWithPrivateField {
+    //   #privateField;
+
+    //   constructor() {
+    //     this.#privateField = 42;
+    //   }
+    // }
+
+    // class SubClass extends ClassWithPrivateField {
+    //   #subPrivateField;
+
+    //   constructor() {
+    //     super();
+    //     this.#subPrivateField = 23;
+    //   }
+    // }
+
+    // let x = new ClassWithPrivateField();
+    // console.log('x:', x.#privateField);
+
+  // 3. Abstraction
+
+//   class Employee {
+//     constructor() {
+//       if (this.constructor == Employee) {
+//         //  console.log(" Object of Abstract Class cannot be created"); 
+//         throw new Error(" Object of Abstract Class cannot be created");
+//     }
+// }
+// display() {
+//         //  console.log("Abstract Method has no implementation");
+//       throw new Error("Abstract Method has no implementation");
+//     }
+//   }
+//   class Manager extends Employee {
+//     display() {
+//     //   super.display();
+//       console.log("I am a Manager");
+//     }
+//   }
+//   var emp = new Employee;
+//   console.log(emp);
+//   var mang = new Manager();
+//   mang.display();
+
+  // 4. Polymorphism
+
+  class Shop{
+      run(){
+          console.log("Aggarwal sweet corner");
+      }
+  }
+
+  class Samosa extends Shop{
+      run(){
+          console.log("Samose lelo");
+      }
+  }
+
+  class Sweets extends Shop{
+      run(){
+          console.log("Sweet lelo");
+      }
+  }
+
+  let a1 = new Shop("arrarwal ji");
+
+  let a2 = new Samosa();
+
+  let a3 = new Sweets();
+
+  a1.run();
+  a2.run();
+  a3.run();
+</script>

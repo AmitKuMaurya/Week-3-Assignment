@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUTOMOBILE INHERITANCE MODEL</title>
+</head>
+<body>
+     <h1>AUTOMOBILE INHERITANCE MODEL</h1>
+</body>
+</html>
+
+<script>
+
+    class Tiago{
+        constructor(c,sc,t){
+            this.company = c;
+            this.fueltank = true;
+            this.SeatingCapacity = sc;
+            this.Transmission = t;
+        }
+    }
+
+    let tt = new Tiago("TATA","5 person","Automatic & mannual");
+    // console.log(tt);
+
+    class harrier extends Tiago{
+        constructor(c,sc,t,pr,en,mi,bs){
+            super(c,sc,t);
+            this.price = pr;
+            this.Engine = en;
+            this.Mileage = mi;
+            this.BootSpace = bs;
+        }
+    }
+
+    // let th = new Tata_harrier();
+    let th = new harrier("TATA","5 person","Automatic & mannual","21 - 25 lakhs","1950 cc","17 Km","425 litre's");
+
+    console.log(th);
+
+
+</script>
